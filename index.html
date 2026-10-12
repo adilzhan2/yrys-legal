@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Yrys is a private, offline spending tracker for iPhone. Support contact, Privacy Policy and Terms of Use.">
+<title>Yrys</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230e8a5f'/%3E%3Ctext x='32' y='44' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23fff'%3EY%3C/text%3E%3C/svg%3E">
+<style>
+:root{color-scheme:light dark;--bg:#fff;--fg:#111417;--muted:#5b6470;--accent:#0e8a5f;--accent-ink:#0b6e4c;--rule:#e4e8ec;--card:#f4f6f8;--max:42rem}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1214;--fg:#e8ebee;--muted:#98a2ad;--accent:#3ccf94;--accent-ink:#5fe0ab;--rule:#242a30;--card:#171c20}}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
+header,main,footer{max-width:var(--max);margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
+header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1rem;padding-top:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule)}
+.brand{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.1rem;letter-spacing:.02em;color:var(--fg);text-decoration:none}
+.brand .dot{width:.75rem;height:.75rem;border-radius:50%;background:var(--accent)}
+nav a{color:var(--muted);text-decoration:none;margin-left:1rem;font-size:.95rem}
+nav a[aria-current=page]{color:var(--fg);font-weight:600}
+nav a:hover{color:var(--accent-ink)}
+main{padding-top:2.5rem;padding-bottom:3rem}
+h1{font-size:2rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 .5rem}
+h2{font-size:1.25rem;line-height:1.3;margin:2.25rem 0 .5rem}
+h3{font-size:1.05rem;margin:1.25rem 0 .25rem}
+p,li{margin:0 0 1rem}
+ul{padding-left:1.25rem}
+li{margin-bottom:.5rem}
+a{color:var(--accent-ink)}
+.lead{font-size:1.15rem;color:var(--muted);margin-bottom:2rem}
+.cards{display:grid;gap:1rem;grid-template-columns:1fr;margin:1.5rem 0}
+.card{display:block;background:var(--card);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;color:var(--fg)}
+.card strong{display:block;color:var(--accent-ink);margin-bottom:.2rem}
+.card span{color:var(--muted);font-size:.95rem}
+.mail{font-size:1.15rem;font-weight:600;word-break:break-all}
+footer{border-top:1px solid var(--rule);padding-top:1.25rem;padding-bottom:2.5rem;color:var(--muted);font-size:.9rem}
+footer a{color:inherit}
+@media (min-width:700px){body{font-size:18px}h1{font-size:2.5rem}.cards{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="./"><span class="dot" aria-hidden="true"></span>Yrys</a>
+  <nav aria-label="Site">
+    <a href="./" aria-current="page">Home</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="terms.html">Terms</a>
+  </nav>
+</header>
+
+<main>
+  <h1>Yrys</h1>
+  <p class="lead">A fast, private spending tracker for iPhone, with a quiet check on impulse buys. Everything stays on your device.</p>
+
+  <p>Yrys has no servers, no account and no sign-in. Your accounts, categories and transactions live only on your iPhone. The optional Yrys Pro subscription is sold through the App Store.</p>
+
+  <div class="cards">
+    <a class="card" href="privacy.html"><strong>Privacy Policy</strong><span>What the app stores, where, and how to delete it.</span></a>
+    <a class="card" href="terms.html"><strong>Terms of Use</strong><span>License, Yrys Pro subscription, cancellation and refunds.</span></a>
+  </div>
+
+  <h2 id="support">Support</h2>
+  <p>Questions, bug reports and feature ideas are welcome. Write to us and mention your iPhone model and iOS version.</p>
+  <p class="mail"><a href="mailto:НОВЫЙ@АДРЕС?subject=Yrys%20support">НОВЫЙ@АДРЕС</a></p>
+  <p>We usually reply within two business days. Please don't include card numbers or other sensitive details in your message.</p>
+
+  <h2 id="faq">Common questions</h2>
+  <h3>How do I cancel Yrys Pro?</h3>
+  <p>Subscriptions are managed by Apple. Open <strong>Settings → your name → Subscriptions → Yrys</strong> and tap Cancel. You keep Pro until the end of the period you already paid for. Refund requests go to Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
+  <h3>How do I delete my data?</h3>
+  <p>In the app, open <strong>Menu → Erase All Data</strong>. To remove everything, including the app's local safety copies, delete the app from your iPhone. We never hold a copy of your data, so there is nothing for us to delete on our side.</p>
+  <h3>Does Yrys sync between devices?</h3>
+  <p>No. Yrys works offline and does not sync. Your data is included in your iPhone's standard iCloud or computer backup, and you can export it as a CSV file from the Menu at any time.</p>
+</main>
+
+<footer>
+  <p>Yrys · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Use</a> · <a href="mailto:НОВЫЙ@АДРЕС">Contact</a></p>
+</footer>
+</body>
+</html>
