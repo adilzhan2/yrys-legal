@@ -43,6 +43,19 @@
 | TXT | `@` | `google-site-verification=ILC7SQGj_-m8YXLykTzXvQyssWtFeWzR5e28JwgXiLU` | Подтверждение в Google Search Console |
 | CNAME | `046457a8cc402118bf13bba1d0e40ec7` | `verify.bing.com` | Подтверждение в Bing Webmaster |
 
+### Почта support@yrys.app
+
+Cloudflare Email Routing: `support@yrys.app` пересылается на личный gmail
+(правило в Email Routing → Routing rules; остальные адреса — Drop).
+Письма только **принимаются**; отвечать — со своего gmail. Для этого Cloudflare добавил
+записи (не удалять, они «Locked»):
+
+| Тип | Имя | Значение |
+|---|---|---|
+| MX | `@` | `route1.mx.cloudflare.net` (90), `route2…` (75), `route3…` (88) |
+| TXT | `@` | `v=spf1 include:_spf.mx.cloudflare.net ~all` |
+| TXT | `cf2024-1._domainkey` | DKIM-ключ Cloudflare |
+
 ### Подтверждение в поисковиках — не удалять
 
 - **Google Search Console:** доменный ресурс `yrys.app`, подтверждён TXT-записью выше.
