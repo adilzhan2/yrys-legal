@@ -1,82 +1,191 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="description" content="Yrys is a private, offline spending tracker for iPhone. Support contact, Privacy Policy and Terms of Use.">
-<title>Yrys</title>
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%230e8a5f'/%3E%3Ctext x='32' y='44' font-family='-apple-system,Helvetica,Arial,sans-serif' font-size='36' font-weight='700' text-anchor='middle' fill='%23fff'%3EY%3C/text%3E%3C/svg%3E">
-<style>
-:root{color-scheme:light dark;--bg:#fff;--fg:#111417;--muted:#5b6470;--accent:#0e8a5f;--accent-ink:#0b6e4c;--rule:#e4e8ec;--card:#f4f6f8;--max:42rem}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1214;--fg:#e8ebee;--muted:#98a2ad;--accent:#3ccf94;--accent-ink:#5fe0ab;--rule:#242a30;--card:#171c20}}
-*{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.6 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-header,main,footer{max-width:var(--max);margin:0 auto;padding-left:1.25rem;padding-right:1.25rem}
-header{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.5rem 1rem;padding-top:1.25rem;padding-bottom:1.25rem;border-bottom:1px solid var(--rule)}
-.brand{display:flex;align-items:center;gap:.55rem;font-weight:700;font-size:1.1rem;letter-spacing:.02em;color:var(--fg);text-decoration:none}
-.brand .dot{width:.75rem;height:.75rem;border-radius:50%;background:var(--accent)}
-nav a{color:var(--muted);text-decoration:none;margin-left:1rem;font-size:.95rem}
-nav a[aria-current=page]{color:var(--fg);font-weight:600}
-nav a:hover{color:var(--accent-ink)}
-main{padding-top:2.5rem;padding-bottom:3rem}
-h1{font-size:2rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 .5rem}
-h2{font-size:1.25rem;line-height:1.3;margin:2.25rem 0 .5rem}
-h3{font-size:1.05rem;margin:1.25rem 0 .25rem}
-p,li{margin:0 0 1rem}
-ul{padding-left:1.25rem}
-li{margin-bottom:.5rem}
-a{color:var(--accent-ink)}
-.lead{font-size:1.15rem;color:var(--muted);margin-bottom:2rem}
-.cards{display:grid;gap:1rem;grid-template-columns:1fr;margin:1.5rem 0}
-.card{display:block;background:var(--card);border-radius:14px;padding:1.1rem 1.25rem;text-decoration:none;color:var(--fg)}
-.card strong{display:block;color:var(--accent-ink);margin-bottom:.2rem}
-.card span{color:var(--muted);font-size:.95rem}
-.mail{font-size:1.15rem;font-weight:600;word-break:break-all}
-footer{border-top:1px solid var(--rule);padding-top:1.25rem;padding-bottom:2.5rem;color:var(--muted);font-size:.9rem}
-footer a{color:inherit}
-@media (min-width:700px){body{font-size:18px}h1{font-size:2.5rem}.cards{grid-template-columns:1fr 1fr}}
-</style>
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<title>Yrys — Halal Budget &amp; Zakat for iPhone</title>
+<meta name="description" content="Yrys is a private budget app for Muslims. Track spending, keep sadaqah in your budget and work out your zakat. No riba, no ads, no bank login. Works offline on iPhone.">
+<link rel="canonical" href="https://yrys.app/">
+<link rel="alternate" hreflang="en" href="https://yrys.app/">
+<link rel="alternate" hreflang="ar" href="https://yrys.app/ar.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Yrys — Halal Budget & Zakat for iPhone">
+<meta property="og:description" content="Track spending, give sadaqah, work out your zakat. No riba, no ads, no bank login.">
+<meta property="og:url" content="https://yrys.app/">
+<meta property="og:image" content="https://yrys.app/img/icon-256.png">
+<meta name="twitter:card" content="summary">
+<meta name="apple-itunes-app" content="app-id=6817070500">
+<link rel="icon" href="img/icon-64.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header>
-  <a class="brand" href="./"><span class="dot" aria-hidden="true"></span>Yrys</a>
-  <nav aria-label="Site">
-    <a href="./" aria-current="page">Home</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Terms</a>
-    <a href="ar.html" lang="ar" hreflang="ar">العربية</a>
-  </nav>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon-64.png" alt="">Yrys</a>
+    <nav aria-label="Site">
+      <a class="opt" href="#zakat">Zakat</a>
+      <a class="opt" href="#features">Features</a>
+      <a class="opt" href="#support">Support</a>
+      <a class="lang" href="ar.html" lang="ar" hreflang="ar">العربية</a>
+    </nav>
+  </div>
 </header>
 
 <main>
-  <h1>Yrys</h1>
-  <p class="lead">A fast, private spending tracker for iPhone, with a quiet check on impulse buys. Everything stays on your device.</p>
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="eyebrow">For iPhone · English and العربية</span>
+        <h1>A halal budget that stays on your iPhone.</h1>
+        <p class="lead">See where your money goes, keep sadaqah part of your budget and work out your zakat. No riba, no ads, no bank login.</p>
+        <a class="btn" href="https://apps.apple.com/app/id6817070500">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a1 1 0 0 1 1 1v9.59l3.3-3.3a1 1 0 1 1 1.4 1.42l-5 5a1 1 0 0 1-1.4 0l-5-5a1 1 0 1 1 1.4-1.42l3.3 3.3V4a1 1 0 0 1 1-1Zm-7 15a1 1 0 0 1 1 1v1h12v-1a1 1 0 1 1 2 0v2a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1Z"/></svg>
+          Get Yrys on the App Store
+        </a>
+        <p class="fine">Annual Access starts with a 7-day free trial for new subscribers.</p>
+      </div>
+      <img class="phone" src="img/en-summary.jpg" width="552" height="1200" alt="Yrys Month Summary: income, expenses, what's left and what's eating your income, including Sadaqah & Charity">
+    </div>
+  </section>
 
-  <p>Yrys has no servers, no account and no sign-in. Your accounts, categories and transactions live only on your iPhone. The optional Yrys Pro subscription is sold through the App Store.</p>
-
-  <div class="cards">
-    <a class="card" href="privacy.html"><strong>Privacy Policy</strong><span>What the app stores, where, and how to delete it.</span></a>
-    <a class="card" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener"><strong>Terms of Use</strong><span>Apple's standard Licensed Application End User License Agreement, which covers subscriptions.</span></a>
+  <div class="pillars">
+    <div class="wrap">
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M6 18 18 6"/></svg>
+        <strong>No riba</strong><span>No interest calculators, no loans, no credit offers.</span>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 5 18 14"/></svg>
+        <strong>No ads</strong><span>No ads and no analytics. Nothing tracks you.</span>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M10 18h4"/></svg>
+        <strong>On your iPhone</strong><span>No account, no bank login. Works fully offline.</span>
+      </div>
+      <div class="pillar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10Z"/></svg>
+        <strong>Sadaqah built in</strong><span>Giving is a category from day one, not what's left over.</span>
+      </div>
+    </div>
   </div>
 
-  <h2 id="support">Support</h2>
-  <p>Questions, bug reports and feature ideas are welcome. Write to us and mention your iPhone model and iOS version.</p>
-  <p class="mail"><a href="mailto:yrys.app@gmail.com?subject=Yrys%20support">yrys.app@gmail.com</a></p>
-  <p>We usually reply within two business days. Please don't include card numbers or other sensitive details in your message.</p>
+  <section class="row" id="zakat">
+    <div class="wrap">
+      <div class="text">
+        <span class="eyebrow">Zakat Calculator</span>
+        <h2>Your zakat, from your own accounts.</h2>
+        <p>Yrys adds up the balances you choose, plus gold, silver and other assets you enter, subtracts debts due now and checks the nisab. Then it shows the 2.5% due.</p>
+        <ul>
+          <li>Nisab by silver (595 g) or gold (85 g), your choice.</li>
+          <li>Mark zakat as paid in one tap: it's logged in Sadaqah &amp; Charity.</li>
+          <li>You enter gold and silver prices yourself, so it works offline.</li>
+        </ul>
+        <p class="note">An estimate for guidance. Rulings differ between schools, so ask a scholar you trust.</p>
+      </div>
+      <img class="phone" src="img/en-zakat.jpg" width="552" height="1200" alt="Yrys Zakat screen: zakat due calculated from account balances" loading="lazy">
+    </div>
+  </section>
 
-  <h2 id="faq">Common questions</h2>
-  <h3>How do I cancel Yrys Pro?</h3>
-  <p>Subscriptions are managed by Apple. Open <strong>Settings → your name → Subscriptions → Yrys</strong> and tap Cancel. You keep Pro until the end of the period you already paid for. Refund requests go to Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
-  <h3>How do I delete my data?</h3>
-  <p>In the app, open <strong>Menu → Erase All Data</strong>. To remove everything, including the app's local safety copies, delete the app from your iPhone. We never hold a copy of your data, so there is nothing for us to delete on our side.</p>
-  <h3>Does Yrys sync between devices?</h3>
-  <p>No. Yrys works offline and does not sync. Your data is included in your iPhone's standard iCloud or computer backup, and you can export it as a CSV file from the Menu at any time.</p>
+  <section id="features">
+    <div class="wrap">
+      <div class="center">
+        <h2>Everything a budget needs. Nothing it doesn't.</h2>
+        <p class="lead">Built for real life: quick to log, clear to read, private by design.</p>
+      </div>
+      <div class="grid3">
+        <div class="tile">
+          <h3>Log it in 3 taps</h3>
+          <p>Type the amount, tap a category, done. The keypad adds up 12+8.50+4 for you.</p>
+          <div class="shot"><img src="img/en-log.jpg" width="552" height="1200" alt="Logging an expense with the Yrys keypad" loading="lazy"></div>
+        </div>
+        <div class="tile">
+          <h3>See where it goes</h3>
+          <p>Month Summary, reports for any day, month or year, and trends over up to two years.</p>
+          <div class="shot"><img src="img/en-trends.jpg" width="552" height="1200" alt="Yrys Trends: this month compared with last month" loading="lazy"></div>
+        </div>
+        <div class="tile">
+          <h3>Every account, every currency</h3>
+          <p>Cash, cards and savings, each in its own currency. Totals are never mixed at a rate you didn't choose.</p>
+          <div class="shot"><img src="img/en-accounts.jpg" width="552" height="1200" alt="Yrys Accounts in several currencies" loading="lazy"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="row flip">
+    <div class="wrap">
+      <div class="text">
+        <h2>Private by design.</h2>
+        <p>Yrys has no servers, no account and no sign-in. Your accounts, categories and transactions live only on your iPhone.</p>
+        <ul>
+          <li>No bank login, no ads, no analytics.</li>
+          <li>Export everything to a CSV file anytime and import it back.</li>
+          <li>Full Arabic interface, right to left.</li>
+        </ul>
+        <p><a href="privacy.html">Read the Privacy Policy</a></p>
+      </div>
+      <div class="plan">
+        <h3 style="margin-top:0">Yrys Pro</h3>
+        <ul>
+          <li>Monthly Access or Annual Access. Both include everything on this page.</li>
+          <li>Annual Access starts with a 7-day free trial for new subscribers. Cancel during the trial and you won't be charged.</li>
+          <li>You see the price in the app before you pay. Payment is handled by Apple.</li>
+          <li>Cancel anytime in Settings → your name → Subscriptions.</li>
+        </ul>
+        <a class="btn" href="https://apps.apple.com/app/id6817070500">Get Yrys</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="wrap faq">
+      <h2>Support</h2>
+      <p>Questions, bug reports and feature ideas are welcome. Write to us in English or Arabic and mention your iPhone model and iOS version.</p>
+      <p class="mail"><a href="mailto:yrys.app@gmail.com?subject=Yrys%20support">yrys.app@gmail.com</a></p>
+      <p style="color:var(--muted)">We usually reply within two business days. Please don't include card numbers or other sensitive details in your message.</p>
+
+      <h2 id="faq" style="margin-top:3rem">Common questions</h2>
+      <details>
+        <summary>How does the zakat calculator work?</summary>
+        <p>It adds up the account balances you choose, gold and silver at the price you enter, and other assets, then subtracts debts due now. If the total reaches the nisab (595 g of silver or 85 g of gold, your choice), it shows 2.5% of it. This is an estimate for guidance. Rulings differ between schools, so ask a scholar you trust.</p>
+      </details>
+      <details>
+        <summary>How do I cancel Yrys Pro?</summary>
+        <p>Subscriptions are managed by Apple. Open <strong>Settings → your name → Subscriptions → Yrys</strong> and tap Cancel. You keep Pro until the end of the period you already paid for. Refund requests go to Apple at <a href="https://reportaproblem.apple.com" rel="noopener">reportaproblem.apple.com</a>.</p>
+      </details>
+      <details>
+        <summary>How do I delete my data?</summary>
+        <p>In the app, open <strong>Menu → Erase All Data</strong>. To remove everything, including the app's local safety copies, delete the app from your iPhone. We never hold a copy of your data, so there is nothing for us to delete on our side.</p>
+      </details>
+      <details>
+        <summary>Does Yrys sync between devices?</summary>
+        <p>No. Yrys works offline and does not sync. Your data is included in your iPhone's standard iCloud or computer backup, and you can export it as a CSV file from the Menu at any time.</p>
+      </details>
+      <details>
+        <summary>How do I switch the app to Arabic?</summary>
+        <p>Yrys follows your iPhone's language. To pick a language just for Yrys: <strong>Settings → Apps → Yrys → Language</strong>.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="cta center">
+    <div class="wrap">
+      <img class="icon" src="img/icon-256.png" width="96" height="96" alt="Yrys app icon">
+      <h2>Keep your money clean and clear.</h2>
+      <p class="lead">Yrys comes from a Kazakh word for well-being and plenty.</p>
+      <a class="btn" href="https://apps.apple.com/app/id6817070500">Get Yrys on the App Store</a>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>Yrys · <a href="privacy.html">Privacy Policy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Terms of Use</a> · <a href="mailto:yrys.app@gmail.com">Contact</a></p>
+  <div class="wrap">
+    <span>© 2026 Yrys</span>
+    <span><a href="privacy.html">Privacy Policy</a> · <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Terms of Use</a> · <a href="mailto:yrys.app@gmail.com">Contact</a> · <a href="ar.html" lang="ar">العربية</a></span>
+  </div>
 </footer>
 </body>
 </html>
