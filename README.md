@@ -71,6 +71,28 @@ Cloudflare Email Routing: `support@yrys.app` пересылается на ли�
 публично через DNS. Скрывать их не нужно, но если удалить — подтверждение слетит
 и придётся проходить его заново.
 
+## Ссылки на App Store с меткой источника
+
+Формат: `https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=<метка>&mt=8`.
+`pt=129525827` — наш provider token (общий для Yrys и Pera), `ct` — откуда пришёл человек
+(до 40 символов, латиница). Загрузки по меткам видны в App Store Connect →
+Yrys → Аналитика → Приобретение → Кампании (появляются, когда по ссылке кто-то пришёл;
+данные считаются только у пользователей, разрешивших делиться аналитикой с разработчиками).
+
+| Где | Ссылка |
+|---|---|
+| Сайт, английская страница (все кнопки) | `…&ct=site-en&mt=8` — уже стоит |
+| Сайт, арабская страница (все кнопки) | `…&ct=site-ar&mt=8` — уже стоит |
+| Instagram, ссылка в профиле | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=instagram&mt=8 |
+| TikTok, ссылка в профиле | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=tiktok&mt=8 |
+| YouTube, описание канала и Shorts | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=youtube&mt=8 |
+| Facebook, страница | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=facebook&mt=8 |
+| X (арабский) | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=x-ar&mt=8 |
+| WhatsApp-канал | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=whatsapp&mt=8 |
+| Reddit | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=reddit&mt=8 |
+
+Новую метку можно придумать самому (например `ct=ramadan-reel1`), регистрировать её нигде не нужно.
+
 ## App Store Connect
 
 Ссылки ведут сюда:
