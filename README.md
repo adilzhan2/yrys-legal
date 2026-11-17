@@ -1,6 +1,6 @@
 # yrys.app — сайт Yrys
 
-Лендинг (en/ar), поддержка и политика конфиденциальности приложения Yrys.
+Лендинг (en/ar/fr), поддержка и политика конфиденциальности приложения Yrys.
 Живой адрес: https://yrys.app
 
 ## Как обновить сайт
@@ -16,6 +16,7 @@
 |---|---|
 | `index.html` | Главная (английский). Якорь `#support` — ссылка Support из App Store |
 | `ar.html` | Главная (арабский, RTL). Якорь `#support` — Support для ar-SA |
+| `fr.html` | Главная (французский). Якорь `#support` — Support для fr-FR. Кнопки App Store с `ct=site-fr` |
 | `privacy.html` | Privacy Policy — ссылка из App Store и из приложения. **Не переименовывать и не удалять** |
 | `site.css`, `img/` | Стили и картинки лендинга |
 | `CNAME` | Подключает домен `yrys.app` к GitHub Pages. **Не удалять** |
@@ -83,6 +84,7 @@ Yrys → Аналитика → Приобретение → Кампании (�
 |---|---|
 | Сайт, английская страница (все кнопки) | `…&ct=site-en&mt=8` — уже стоит |
 | Сайт, арабская страница (все кнопки) | `…&ct=site-ar&mt=8` — уже стоит |
+| Сайт, французская страница (все кнопки) | `…&ct=site-fr&mt=8` — уже стоит |
 | Instagram, ссылка в профиле | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=instagram&mt=8 |
 | TikTok, ссылка в профиле | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=tiktok&mt=8 |
 | YouTube, описание канала и Shorts | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=youtube&mt=8 |
