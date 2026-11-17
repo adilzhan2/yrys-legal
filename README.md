@@ -96,6 +96,23 @@ Yrys → Аналитика → Приобретение → Кампании (�
 
 Новую метку можно придумать самому (например `ct=ramadan-reel1`), регистрировать её нигде не нужно.
 
+### Короткие ссылки для профилей
+
+Папки `ig/`, `tt/` и т.д. — страницы-переадресации: `yrys.app/tt` сразу открывает App Store
+с меткой `ct=tiktok`. Их и ставить в профили и называть в роликах. Не индексируются (`noindex`).
+
+| Короткая ссылка | Метка |
+|---|---|
+| https://yrys.app/ig | `instagram` |
+| https://yrys.app/tt | `tiktok` |
+| https://yrys.app/yt | `youtube` |
+| https://yrys.app/fb | `facebook` |
+| https://yrys.app/x | `x-ar` |
+| https://yrys.app/wa | `whatsapp` |
+| https://yrys.app/rd | `reddit` |
+
+Новая короткая ссылка: скопировать любую папку (например `tt/` → `blogger1/`) и поменять `ct=` в трёх местах внутри `index.html`.
+
 ## App Store Connect
 
 Ссылки ведут сюда:
