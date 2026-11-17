@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#000000">
+<title>Zakat Calculator 2027 (1448 AH) — Free, Gold &amp; Silver Nisab | Yrys</title>
+<meta name="description" content="Free zakat calculator: add your cash, savings, gold, silver, investments and business assets, subtract debts and see the nisab and the 2.5% zakat due. Nothing leaves your browser.">
+<link rel="canonical" href="https://yrys.app/zakat-calculator.html">
+<link rel="alternate" hreflang="en" href="https://yrys.app/zakat-calculator.html">
+<link rel="alternate" hreflang="fr" href="https://yrys.app/calculateur-zakat.html">
+<link rel="alternate" hreflang="ar" href="https://yrys.app/ar-zakat.html">
+<link rel="alternate" hreflang="x-default" href="https://yrys.app/zakat-calculator.html">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zakat Calculator — Gold &amp; Silver Nisab, 2.5%">
+<meta property="og:description" content="Add your cash, savings, gold, silver and investments, subtract debts and see the zakat due. Free, private, in your browser.">
+<meta property="og:url" content="https://yrys.app/zakat-calculator.html">
+<meta property="og:image" content="https://yrys.app/img/og-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Yrys">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://yrys.app/img/og-en.jpg">
+<meta name="apple-itunes-app" content="app-id=6817070500">
+<link rel="icon" href="img/icon-64.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "name": "Zakat Calculator",
+      "url": "https://yrys.app/zakat-calculator.html",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "inLanguage": "en",
+      "isAccessibleForFree": true,
+      "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+      "publisher": {"@type": "Organization", "name": "Yrys", "url": "https://yrys.app/"}
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Yrys", "item": "https://yrys.app/"},
+        {"@type": "ListItem", "position": 2, "name": "Zakat Calculator", "item": "https://yrys.app/zakat-calculator.html"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "How much is zakat?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Zakat is 2.5% (one fortieth) of your zakatable wealth, once it has stayed at or above the nisab for one full lunar year."}},
+        {"@type": "Question", "name": "What is the nisab for zakat?",
+         "acceptedAnswer": {"@type": "Answer", "text": "The nisab is the minimum wealth on which zakat is due: the value of 85 grams of gold or 595 grams of silver. Multiply today's price per gram by 85 or 595 to get it in your currency."}},
+        {"@type": "Question", "name": "Should I use the gold or the silver nisab?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Many scholars recommend the silver nisab for cash and mixed wealth because it is lower, so more people give and the poor benefit more. Others use gold. Follow the school or scholar you trust."}},
+        {"@type": "Question", "name": "Do I pay zakat on my house or car?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. Personal items you use, such as your home, car, furniture and clothes, are not zakatable. Property or goods held for sale are."}},
+        {"@type": "Question", "name": "Can I subtract debts from zakat?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Debts and bills due now are usually subtracted before checking the nisab. For long-term loans, many scholars subtract only the instalments due in the coming year."}},
+        {"@type": "Question", "name": "Is my data sent anywhere?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. The calculator runs entirely in your browser. Nothing you type is stored or sent to a server."}}
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="img/icon-64.png" alt="">Yrys</a>
+    <nav aria-label="Site">
+      <a class="opt" href="./#features">The App</a>
+      <a class="opt" href="#how">How it works</a>
+      <a class="lang" href="calculateur-zakat.html" lang="fr" hreflang="fr">Français</a>
+      <a class="lang" href="ar-zakat.html" lang="ar" hreflang="ar">العربية</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="calc-hero">
+    <div class="wrap">
+      <div class="crumbs"><a href="./">Yrys</a> › Zakat Calculator</div>
+      <h1>Zakat Calculator</h1>
+      <p class="lead">Add what you own, subtract what you owe now, and see if you reach the nisab. Zakat is 2.5% of the total. Free, and nothing you type leaves your browser.</p>
+    </div>
+  </section>
+
+  <section class="calc">
+    <div class="wrap">
+      <form id="zakat-form" autocomplete="off" novalidate>
+        <fieldset>
+          <legend>Currency and nisab</legend>
+          <div class="field">
+            <label for="currency">Your currency</label>
+            <select id="currency" name="currency">
+              <option value="USD" selected>USD — US dollar</option>
+              <option value="GBP">GBP — British pound</option>
+              <option value="EUR">EUR — Euro</option>
+              <option value="CAD">CAD — Canadian dollar</option>
+              <option value="AUD">AUD — Australian dollar</option>
+              <option value="SAR">SAR — Saudi riyal</option>
+              <option value="AED">AED — UAE dirham</option>
+              <option value="QAR">QAR — Qatari riyal</option>
+              <option value="KWD">KWD — Kuwaiti dinar</option>
+              <option value="EGP">EGP — Egyptian pound</option>
+              <option value="MAD">MAD — Moroccan dirham</option>
+              <option value="DZD">DZD — Algerian dinar</option>
+              <option value="TND">TND — Tunisian dinar</option>
+              <option value="TRY">TRY — Turkish lira</option>
+              <option value="PKR">PKR — Pakistani rupee</option>
+              <option value="INR">INR — Indian rupee</option>
+              <option value="BDT">BDT — Bangladeshi taka</option>
+              <option value="IDR">IDR — Indonesian rupiah</option>
+              <option value="MYR">MYR — Malaysian ringgit</option>
+              <option value="NGN">NGN — Nigerian naira</option>
+              <option value="KZT">KZT — Kazakh tenge</option>
+              <option value="UZS">UZS — Uzbek som</option>
+              <option value="RUB">RUB — Russian ruble</option>
+            </select>
+          </div>
+          <p class="hint">Nisab is based on</p>
+          <div class="seg" role="radiogroup" aria-label="Nisab is based on">
+            <label><input type="radio" name="basis" value="silver" checked><span>Silver · 595 g</span></label>
+            <label><input type="radio" name="basis" value="gold"><span>Gold · 85 g</span></label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Gold &amp; silver</legend>
+          <p class="hint">Check today's price per gram with a local jeweller or a gold price site. You need the price of the metal your nisab is based on, even if you own none.</p>
+          <div class="field"><label for="goldPrice">Gold price per gram</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
+          <div class="field"><label for="silverPrice">Silver price per gram</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
+          <div class="field"><label for="goldGrams">Gold you own</label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>g</span></div><small>Jewellery, coins and bars. For 21k or 18k gold, count the pure gold weight.</small></div>
+          <div class="field"><label for="silverGrams">Silver you own</label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>g</span></div></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Cash and savings</legend>
+          <div class="field"><label for="cash">Cash at home and in current accounts</label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
+          <div class="field"><label for="savings">Savings and deposits</label><div class="inp"><input id="savings" name="savings" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Count only your own money, not interest earned. Interest is given away, not kept.</small></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Investments and business</legend>
+          <div class="field"><label for="investments">Shares, funds and crypto</label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Today's market value of what you hold.</small></div>
+          <div class="field"><label for="business">Business stock and goods for sale</label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
+          <div class="field"><label for="receivables">Money owed to you</label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Loans you expect to get back.</small></div>
+        </fieldset>
+
+        <fieldset>
+          <legend>What you owe now</legend>
+          <div class="field"><label for="debts">Debts and bills due now</label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Rent, bills and loan instalments due now. Not the full balance of a long-term loan.</small></div>
+        </fieldset>
+        <p><button type="reset" class="reset">Clear all</button></p>
+      </form>
+
+      <aside class="calc-side">
+        <div class="result" id="zakat-result" aria-live="polite">
+          <div class="lbl" id="zr-label">Zakat due</div>
+          <div class="big" id="zr-amount">—</div>
+          <p id="zr-note">Enter your amounts to see your zakat.</p>
+          <dl>
+            <dt>Zakatable wealth</dt><dd id="zr-wealth">—</dd>
+            <dt>Nisab</dt><dd id="zr-nisab">—</dd>
+            <dt>Rate</dt><dd>2.5%</dd>
+          </dl>
+          <p class="warn" id="zr-warn" hidden></p>
+        </div>
+        <div class="promo">
+          <h2>Your zakat, worked out from your accounts</h2>
+          <p>Yrys is a halal budget app for iPhone. It adds up the balances you choose, checks the nisab, logs your payment in Sadaqah &amp; Charity and reminds you one lunar year later.</p>
+          <a class="btn" href="https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&amp;ct=site-zakat-en&amp;mt=8">Get Yrys on the App Store</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap article">
+      <h2 style="margin-top:0">How zakat is calculated</h2>
+      <ol>
+        <li><strong>Add up your zakatable wealth:</strong> cash, bank balances, savings, gold, silver, investments, business goods and money owed to you.</li>
+        <li><strong>Subtract debts due now:</strong> bills, rent and loan instalments you have to pay now.</li>
+        <li><strong>Compare with the nisab:</strong> the value of 85 g of gold or 595 g of silver.</li>
+        <li><strong>If you are at or above the nisab for one lunar year,</strong> pay 2.5% of the total.</li>
+      </ol>
+      <p>Example: you have 4,000 in the bank, 1,500 in cash and 20 g of gold at 80 per gram (1,600), and owe 600 in bills now. Your zakatable wealth is 4,000 + 1,500 + 1,600 − 600 = 6,500. If silver is 1 per gram, the nisab is 595, so zakat is due: 6,500 × 2.5% = 162.50.</p>
+
+      <h2>What is the nisab?</h2>
+      <p>The nisab is the minimum amount of wealth you must have before zakat is due. It is set by the price of gold or silver:</p>
+      <table>
+        <tr><th>Basis</th><th>Weight</th><th>Nisab in your currency</th></tr>
+        <tr><td>Gold</td><td>85 g (about 2.73 troy oz)</td><td>85 × gold price per gram</td></tr>
+        <tr><td>Silver</td><td>595 g (about 19.13 troy oz)</td><td>595 × silver price per gram</td></tr>
+      </table>
+      <p>Because silver is much cheaper than gold, the silver nisab is much lower. Many scholars recommend it for cash and mixed wealth so that more people give. Others use gold. Choose the one your school or scholar follows.</p>
+
+      <h2>The lunar year (hawl)</h2>
+      <p>Zakat is due once your wealth has stayed at or above the nisab for one lunar year, about 354 days. Many people pick a fixed date, often in Ramadan, and pay every year on that date.</p>
+
+      <h2>What is not zakatable</h2>
+      <ul>
+        <li>Your home, car, furniture, clothes and other things you use.</li>
+        <li>Tools and equipment you work with.</li>
+        <li>Property you live in or rent out (the rent you have saved is zakatable).</li>
+      </ul>
+
+      <h2 id="faq">Common questions</h2>
+      <details><summary>How much is zakat?</summary><p>Zakat is 2.5% (one fortieth) of your zakatable wealth, once it has stayed at or above the nisab for one full lunar year.</p></details>
+      <details><summary>Should I use the gold or the silver nisab?</summary><p>Many scholars recommend the silver nisab for cash and mixed wealth because it is lower, so more people give and the poor benefit more. Others use gold. Follow the school or scholar you trust.</p></details>
+      <details><summary>Do I pay zakat on my house or car?</summary><p>No. Personal items you use, such as your home, car, furniture and clothes, are not zakatable. Property or goods held for sale are.</p></details>
+      <details><summary>Can I subtract debts from zakat?</summary><p>Debts and bills due now are usually subtracted before checking the nisab. For long-term loans, many scholars subtract only the instalments due in the coming year.</p></details>
+      <details><summary>Do I pay zakat on gold jewellery I wear?</summary><p>Scholars differ. The Hanafi school counts worn jewellery; many others do not. The calculator counts whatever gold you enter, so leave worn jewellery out if your school exempts it.</p></details>
+      <details><summary>Is my data sent anywhere?</summary><p>No. The calculator runs entirely in your browser. Nothing you type is stored or sent to a server.</p></details>
+
+      <p class="note">This calculator gives an estimate for guidance. Rulings differ between schools, so for your own situation ask a scholar you trust.</p>
+    </div>
+  </section>
+
+  <section class="cta center">
+    <div class="wrap">
+      <img class="icon" src="img/icon-256.png" width="96" height="96" alt="Yrys app icon" loading="lazy">
+      <h2>Zakat, sadaqah and your budget in one place.</h2>
+      <p class="lead">Yrys keeps your money on your iPhone. No riba, no ads, no bank login.</p>
+      <a class="btn" href="https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&amp;ct=site-zakat-en&amp;mt=8">Get Yrys on the App Store</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Yrys</span>
+    <span><a href="./">Yrys app</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@yrys.app">Contact</a> · <a href="calculateur-zakat.html" lang="fr">Français</a> · <a href="ar-zakat.html" lang="ar">العربية</a></span>
+  </div>
+</footer>
+<script src="zakat.js" defer></script>
+</body>
+</html>

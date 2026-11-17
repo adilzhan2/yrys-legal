@@ -17,6 +17,7 @@
 | `index.html` | Главная (английский). Якорь `#support` — ссылка Support из App Store |
 | `ar.html` | Главная (арабский, RTL). Якорь `#support` — Support для ar-SA |
 | `fr.html` | Главная (французский). Якорь `#support` — Support для fr-FR. Кнопки App Store с `ct=site-fr` |
+| `zakat-calculator.html`, `calculateur-zakat.html`, `ar-zakat.html` | Калькулятор закята (en/fr/ar) для поиска. Логика — `zakat.js`, те же правила, что в приложении (`ZakatCalculator.swift`). Кнопки App Store с `ct=site-zakat-en/fr/ar` |
 | `privacy.html` | Privacy Policy — ссылка из App Store и из приложения. **Не переименовывать и не удалять** |
 | `site.css`, `img/` | Стили и картинки лендинга |
 | `CNAME` | Подключает домен `yrys.app` к GitHub Pages. **Не удалять** |
