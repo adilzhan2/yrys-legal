@@ -11,6 +11,7 @@
 <link rel="alternate" hreflang="en" href="https://yrys.app/zakat-calculator.html">
 <link rel="alternate" hreflang="fr" href="https://yrys.app/calculateur-zakat.html">
 <link rel="alternate" hreflang="ar" href="https://yrys.app/ar-zakat.html">
+<link rel="alternate" hreflang="ru" href="https://yrys.app/kalkulyator-zakata.html">
 <link rel="alternate" hreflang="x-default" href="https://yrys.app/zakat-calculator.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="ar_AR">
@@ -79,6 +80,7 @@
       <a class="opt" href="#how">طريقة الحساب</a>
       <a class="lang" href="calculateur-zakat.html" lang="fr" hreflang="fr">Français</a>
       <a class="lang" href="zakat-calculator.html" lang="en" hreflang="en">English</a>
+      <a class="lang" href="kalkulyator-zakata.html" lang="ru" hreflang="ru">Русский</a>
     </nav>
   </div>
 </header>
@@ -88,7 +90,8 @@
     <div class="wrap">
       <div class="crumbs"><a href="ar.html">Yrys</a> ‹ حاسبة الزكاة</div>
       <h1>حاسبة الزكاة</h1>
-      <p class="lead">اجمع ما تملك، واخصم ما عليك من ديون مستحقة الآن، وانظر هل بلغت النصاب. الزكاة 2.5% من المجموع. مجانية، ولا يغادر متصفحَك شيءٌ مما تكتبه.</p>
+      <p class="lead">ثلاث خطوات بسيطة لتعرف هل عليك زكاة وكم مقدارها. يمكنك تخطّي أي حقل لا ينطبق عليك.</p>
+      <div class="explain"><strong>الزكاة</strong> فريضة: يُخرج المسلم مرة في السنة 2.5% من مدخراته للمحتاجين. وتجب فقط إذا بلغت مدخراته <strong>النصاب</strong>، وهو قيمة 85 غ من الذهب أو 595 غ من الفضة.</div>
     </div>
   </section>
 
@@ -96,76 +99,75 @@
     <div class="wrap">
       <form id="zakat-form" autocomplete="off" novalidate>
         <fieldset>
-          <legend>العملة والنصاب</legend>
-          <div class="field">
-            <label for="currency">عملتك</label>
-            <select id="currency" name="currency">
-              <option value="SAR" selected>SAR — ريال سعودي</option>
-              <option value="AED">AED — درهم إماراتي</option>
-              <option value="QAR">QAR — ريال قطري</option>
-              <option value="KWD">KWD — دينار كويتي</option>
-              <option value="BHD">BHD — دينار بحريني</option>
-              <option value="OMR">OMR — ريال عماني</option>
-              <option value="JOD">JOD — دينار أردني</option>
-              <option value="EGP">EGP — جنيه مصري</option>
-              <option value="IQD">IQD — دينار عراقي</option>
-              <option value="LBP">LBP — ليرة لبنانية</option>
-              <option value="MAD">MAD — درهم مغربي</option>
-              <option value="DZD">DZD — دينار جزائري</option>
-              <option value="TND">TND — دينار تونسي</option>
-              <option value="LYD">LYD — دينار ليبي</option>
-              <option value="SDG">SDG — جنيه سوداني</option>
-              <option value="TRY">TRY — ليرة تركية</option>
-              <option value="USD">USD — دولار أمريكي</option>
-              <option value="EUR">EUR — يورو</option>
-              <option value="GBP">GBP — جنيه إسترليني</option>
-            </select>
-          </div>
-          <p class="hint">يُحسب النصاب على أساس</p>
+          <legend><span class="step">1</span>النصاب: بالذهب أم بالفضة</legend>
+          <p class="hint">النصاب هو أقل مبلغ تجب فيه الزكاة، ويُقدَّر بسعر الذهب أو الفضة. إن لم تعرف ماذا تختار فاترك الذهب.</p>
           <div class="seg" role="radiogroup" aria-label="يُحسب النصاب على أساس">
-            <label><input type="radio" name="basis" value="silver" checked><span>الفضة · 595 غ</span></label>
-            <label><input type="radio" name="basis" value="gold"><span>الذهب · 85 غ</span></label>
+            <label><input type="radio" name="basis" value="gold" checked><span>الذهب · 85 غ<small>كثير من العلماء المعاصرين</small></span></label>
+            <label><input type="radio" name="basis" value="silver"><span>الفضة · 595 غ<small>المذهب الحنفي</small></span></label>
           </div>
+          <p class="hint small">تتفق المذاهب الأربعة على النصابين في الذهب والفضة أنفسهما، والخلاف في تقدير النقود: فالحنفية يأخذون بالأنفع للفقراء، وهو نصاب الفضة؛ وكثير من العلماء المعاصرين (يوسف القرضاوي، ومعيار أيوفي) يقدّرونه بالذهب لأن قيمة الفضة انخفضت كثيرًا.</p>
+          <div class="auto">
+            <select id="auto-cur" aria-label="عملتك">
+              <option value="SAR" selected>ريال سعودي</option>
+              <option value="AED">درهم إماراتي</option>
+              <option value="QAR">ريال قطري</option>
+              <option value="KWD">دينار كويتي</option>
+              <option value="BHD">دينار بحريني</option>
+              <option value="OMR">ريال عماني</option>
+              <option value="JOD">دينار أردني</option>
+              <option value="EGP">جنيه مصري</option>
+              <option value="IQD">دينار عراقي</option>
+              <option value="MAD">درهم مغربي</option>
+              <option value="DZD">دينار جزائري</option>
+              <option value="TND">دينار تونسي</option>
+              <option value="LYD">دينار ليبي</option>
+              <option value="SDG">جنيه سوداني</option>
+              <option value="TRY">ليرة تركية</option>
+              <option value="USD">دولار أمريكي</option>
+              <option value="EUR">يورو</option>
+              <option value="GBP">جنيه إسترليني</option>
+            </select>
+            <button type="button" class="btn small" id="auto-price">استخدم سعر اليوم</button>
+          </div>
+          <p class="hint" id="auto-status" aria-live="polite">اختر عملتك وأدخل جميع المبالغ أدناه بها.</p>
+          <div id="price-slot">
+            <div class="field" data-price="gold"><label for="goldPrice">سعر غرام الذهب</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0" class="need"><span data-cur></span></div></div>
+          </div>
+          <p class="nisab-line" id="nisab-inline"></p>
         </fieldset>
 
         <fieldset>
-          <legend>الذهب والفضة</legend>
-          <p class="hint">اعرف سعر الغرام اليوم من صائغ قريب أو موقع لأسعار الذهب. تحتاج سعر المعدن الذي تحسب به النصاب حتى لو لم تملك منه شيئًا.</p>
-          <div class="field"><label for="goldPrice">سعر غرام الذهب</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div></div>
-          <div class="field"><label for="silverPrice">سعر غرام الفضة</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div></div>
-          <div class="field"><label for="goldGrams">الذهب الذي تملكه</label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>غ</span></div><small>حُليّ وعملات وسبائك. لذهب عيار 21 أو 18 احسب وزن الذهب الخالص.</small></div>
-          <div class="field"><label for="silverGrams">الفضة التي تملكها</label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>غ</span></div></div>
+          <legend><span class="step">2</span>ما تملكه</legend>
+          <div class="field"><label for="cash">المال: نقدًا وفي البطاقات والحسابات <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>كله معًا، بما في ذلك المدخرات والودائع. مبلغك الأصلي فقط دون الفوائد: فالفوائد لا تُحتفظ بل يُتخلّص منها.</small></div>
+          <div class="field"><label for="goldGrams">الذهب بالغرام <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>غ</span></div><small>حُليّ وعملات وسبائك. لعيار 21: الوزن × 0.875، ولعيار 18: الوزن × 0.75.</small></div>
+          <div class="field"><label for="silverGrams">الفضة بالغرام <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>غ</span></div></div>
+          <div class="field" data-price="silver" hidden><label for="silverPrice">سعر غرام الفضة</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0" class="need"><span data-cur></span></div></div>
+          <details class="more">
+            <summary>المزيد: تجارة، استثمارات، ديون لك</summary>
+            <div class="field"><label for="business">بضائع للبيع <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>إن كنت تاجرًا: البضائع في المتجر أو المستودع بقيمتها اليوم. ما تقتنيه لنفسك لا يُحسب.</small></div>
+            <div class="field"><label for="investments">قيمة أسهمك وصناديقك وعملاتك الرقمية <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>ليس عددها، بل قيمتها الإجمالية بالمال كما يعرضها تطبيق الوسيط أو المنصة.</small></div>
+            <div class="field"><label for="receivables">ديون لك عند الآخرين <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>إن أقرضت مالًا وتتوقع استرداده.</small></div>
+          </details>
         </fieldset>
 
         <fieldset>
-          <legend>النقود والمدخرات</legend>
-          <div class="field"><label for="cash">النقود في البيت والحسابات الجارية</label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div></div>
-          <div class="field"><label for="savings">المدخرات والودائع</label><div class="inp"><input id="savings" name="savings" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div><small>احسب مالك فقط دون الفوائد. الفوائد يُتخلّص منها ولا تُحتفظ.</small></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>الاستثمارات والتجارة</legend>
-          <div class="field"><label for="investments">الأسهم والصناديق والعملات الرقمية</label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div><small>قيمتها السوقية اليوم.</small></div>
-          <div class="field"><label for="business">عروض التجارة والبضائع المعدّة للبيع</label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div></div>
-          <div class="field"><label for="receivables">ديون لك عند الآخرين</label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div><small>قروض تتوقع استردادها.</small></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>ما عليك الآن</legend>
-          <div class="field"><label for="debts">الديون والفواتير المستحقة الآن</label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur>SAR</span></div><small>الإيجار والفواتير وأقساط القروض المستحقة الآن، لا كامل رصيد القرض الطويل.</small></div>
+          <legend><span class="step">3</span>الديون والقروض والأقساط</legend>
+          <div class="hint-row"><span class="hint">الدين العادي: كامل المبلغ الذي عليك سداده. القرض أو البيع بالتقسيط: الأقساط الاثنا عشر القادمة فقط، ومنها قسط هذا الشهر إن لم تدفعه بعد؛ وإن بقي أقل من ذلك فالمتبقي فقط. لا كامل الرصيد. مثال: قسط 1,000 شهريًا ← 12,000.</span><button type="button" class="info" aria-expanded="false" aria-controls="debts-info" aria-label="لماذا 12 شهرًا؟" title="لماذا 12 شهرًا؟">?</button></div>
+          <p class="info-box" id="debts-info" hidden><strong>لماذا 12 شهرًا.</strong> هذا رأي كثير من العلماء المعاصرين (تقي العثماني، ومعيار أيوفي): القرض الطويل يُسدَّد تدريجيًا، ولو خُصم كله لما وجبت الزكاة تقريبًا. وفي المذهبين الحنفي والحنبلي يُخصم الدين كله، ويرى الشافعية أن الدين لا يُنقص الزكاة. إن كنت تتبع أحد هذه الآراء فأدخل المبلغ وفقه.</p>
+          <div class="field"><label for="debts">كم تخصم <span class="opt">(إن وُجد)</span></label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur></span></div></div>
         </fieldset>
         <p><button type="reset" class="reset">مسح الكل</button></p>
       </form>
 
       <aside class="calc-side">
         <div class="result" id="zakat-result" aria-live="polite">
-          <div class="lbl" id="zr-label">الزكاة الواجبة</div>
+          <div class="lbl" id="zr-label">زكاتك</div>
           <div class="big" id="zr-amount">—</div>
-          <p id="zr-note">أدخل المبالغ لترى زكاتك.</p>
+          <p id="zr-note">ابدأ بالخطوة 1.</p>
           <dl>
-            <dt>الأموال الزكوية</dt><dd id="zr-wealth">—</dd>
+            <dt>أموالك بعد خصم الديون</dt><dd id="zr-wealth">—</dd>
             <dt>النصاب</dt><dd id="zr-nisab">—</dd>
-            <dt>النسبة</dt><dd>2.5%</dd>
+            <dt>الزكاة</dt><dd>2.5%</dd>
           </dl>
           <p class="warn" id="zr-warn" hidden></p>
         </div>
@@ -183,7 +185,7 @@
       <h2 style="margin-top:0">كيف تُحسب الزكاة</h2>
       <ol>
         <li><strong>اجمع أموالك الزكوية:</strong> النقود وأرصدة البنوك والمدخرات والذهب والفضة والاستثمارات وعروض التجارة والديون التي لك.</li>
-        <li><strong>اخصم الديون المستحقة الآن:</strong> الفواتير والإيجار وأقساط القروض الواجبة الدفع الآن.</li>
+        <li><strong>اخصم ديونك:</strong> الديون والفواتير الواجب سدادها، وفي القروض والتقسيط أقساط الأشهر الاثني عشر القادمة.</li>
         <li><strong>قارن بالنصاب:</strong> قيمة 85 غ من الذهب أو 595 غ من الفضة.</li>
         <li><strong>إذا بلغت النصاب وحال عليه الحول القمري،</strong> فأخرج 2.5% من المجموع.</li>
       </ol>
@@ -233,7 +235,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Yrys</span>
-    <span><a href="ar.html">تطبيق Yrys</a> · <a href="privacy.html">سياسة الخصوصية</a> · <a href="mailto:support@yrys.app">تواصل معنا</a> · <a href="zakat-calculator.html" lang="en">English</a> · <a href="calculateur-zakat.html" lang="fr">Français</a></span>
+    <span><a href="ar.html">تطبيق Yrys</a> · <a href="privacy.html">سياسة الخصوصية</a> · <a href="mailto:support@yrys.app">تواصل معنا</a> · <a href="zakat-calculator.html" lang="en">English</a> · <a href="calculateur-zakat.html" lang="fr">Français</a> · <a href="kalkulyator-zakata.html" lang="ru">Русский</a></span>
   </div>
 </footer>
 <script src="zakat.js" defer></script>

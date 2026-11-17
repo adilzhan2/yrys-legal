@@ -17,7 +17,7 @@
 | `index.html` | Главная (английский). Якорь `#support` — ссылка Support из App Store |
 | `ar.html` | Главная (арабский, RTL). Якорь `#support` — Support для ar-SA |
 | `fr.html` | Главная (французский). Якорь `#support` — Support для fr-FR. Кнопки App Store с `ct=site-fr` |
-| `zakat-calculator.html`, `calculateur-zakat.html`, `ar-zakat.html` | Калькулятор закята (en/fr/ar) для поиска. Логика — `zakat.js`, те же правила, что в приложении (`ZakatCalculator.swift`). Кнопки App Store с `ct=site-zakat-en/fr/ar` |
+| `zakat-calculator.html`, `calculateur-zakat.html`, `ar-zakat.html`, `kalkulyator-zakata.html` | Калькулятор закята (en/fr/ar/ru) для поиска: три шага, нисаб по золоту по умолчанию, кредиты — 12 ближайших платежей. Кнопка «Подставить сегодняшнюю цену» берёт цену с api.gold-api.com и курс с open.er-api.com (только по нажатию). Логика — `zakat.js`: ставка, нисаб и вычет долгов как в приложении (`ZakatCalculator.swift`), но в приложении пока нисаб по серебру и «долги на сейчас». Кнопки App Store с `ct=site-zakat-en/fr/ar/ru` |
 | `privacy.html` | Privacy Policy — ссылка из App Store и из приложения. **Не переименовывать и не удалять** |
 | `site.css`, `img/` | Стили и картинки лендинга |
 | `CNAME` | Подключает домен `yrys.app` к GitHub Pages. **Не удалять** |

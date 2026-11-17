@@ -11,6 +11,7 @@
 <link rel="alternate" hreflang="en" href="https://yrys.app/zakat-calculator.html">
 <link rel="alternate" hreflang="fr" href="https://yrys.app/calculateur-zakat.html">
 <link rel="alternate" hreflang="ar" href="https://yrys.app/ar-zakat.html">
+<link rel="alternate" hreflang="ru" href="https://yrys.app/kalkulyator-zakata.html">
 <link rel="alternate" hreflang="x-default" href="https://yrys.app/zakat-calculator.html">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
@@ -79,6 +80,7 @@
       <a class="opt" href="#how">Comment ça marche</a>
       <a class="lang" href="zakat-calculator.html" lang="en" hreflang="en">English</a>
       <a class="lang" href="ar-zakat.html" lang="ar" hreflang="ar">العربية</a>
+      <a class="lang" href="kalkulyator-zakata.html" lang="ru" hreflang="ru">Русский</a>
     </nav>
   </div>
 </header>
@@ -88,7 +90,8 @@
     <div class="wrap">
       <div class="crumbs"><a href="fr.html">Yrys</a> › Calculateur de zakat</div>
       <h1>Calculateur de zakat</h1>
-      <p class="lead">Additionnez ce que vous possédez, déduisez ce que vous devez maintenant et voyez si vous atteignez le nissab. La zakat est de 2,5 % du total. Gratuit, et rien de ce que vous saisissez ne quitte votre navigateur.</p>
+      <p class="lead">Trois étapes simples pour savoir si vous devez la zakat, et combien. Passez les champs qui ne vous concernent pas.</p>
+      <div class="explain">La <strong>zakat</strong> est une aumône obligatoire : une fois par an, le musulman donne 2,5 % de son épargne aux personnes dans le besoin. Elle n’est due que si l’épargne atteint le <strong>nissab</strong>, la valeur de 85 g d’or ou de 595 g d’argent.</div>
     </div>
   </section>
 
@@ -96,71 +99,71 @@
     <div class="wrap">
       <form id="zakat-form" autocomplete="off" novalidate>
         <fieldset>
-          <legend>Monnaie et nissab</legend>
-          <div class="field">
-            <label for="currency">Votre monnaie</label>
-            <select id="currency" name="currency">
-              <option value="EUR" selected>EUR — Euro</option>
-              <option value="CHF">CHF — Franc suisse</option>
-              <option value="CAD">CAD — Dollar canadien</option>
-              <option value="USD">USD — Dollar américain</option>
-              <option value="GBP">GBP — Livre sterling</option>
-              <option value="MAD">MAD — Dirham marocain</option>
-              <option value="DZD">DZD — Dinar algérien</option>
-              <option value="TND">TND — Dinar tunisien</option>
-              <option value="XOF">XOF — Franc CFA (UEMOA)</option>
-              <option value="XAF">XAF — Franc CFA (CEMAC)</option>
-              <option value="SAR">SAR — Riyal saoudien</option>
-              <option value="AED">AED — Dirham des Émirats</option>
-              <option value="EGP">EGP — Livre égyptienne</option>
-              <option value="TRY">TRY — Livre turque</option>
-            </select>
-          </div>
-          <p class="hint">Nissab calculé sur</p>
+          <legend><span class="step">1</span>Nissab : or ou argent</legend>
+          <p class="hint">Le nissab est le montant minimum à partir duquel la zakat est due. Il se calcule sur le prix de l’or ou de l’argent. Vous hésitez ? Laissez l’or.</p>
           <div class="seg" role="radiogroup" aria-label="Nissab calculé sur">
-            <label><input type="radio" name="basis" value="silver" checked><span>Argent · 595 g</span></label>
-            <label><input type="radio" name="basis" value="gold"><span>Or · 85 g</span></label>
+            <label><input type="radio" name="basis" value="gold" checked><span>Or · 85 g<small>De nombreux savants contemporains</small></span></label>
+            <label><input type="radio" name="basis" value="silver"><span>Argent · 595 g<small>École hanafite</small></span></label>
           </div>
+          <p class="hint small">Les quatre écoles acceptent les deux seuils pour l’or et l’argent eux-mêmes. La différence porte sur l’argent liquide : l’école hanafite retient le seuil le plus favorable aux pauvres, l’argent ; de nombreux savants contemporains (Youssef al-Qaradawi, la norme AAOIFI) retiennent l’or, car l’argent a beaucoup perdu de sa valeur.</p>
+          <div class="auto">
+            <select id="auto-cur" aria-label="Votre monnaie">
+              <option value="EUR" selected>€ euro</option>
+              <option value="CHF">CHF franc suisse</option>
+              <option value="CAD">$ CA dollar canadien</option>
+              <option value="USD">$ dollar américain</option>
+              <option value="GBP">£ livre sterling</option>
+              <option value="MAD">MAD dirham marocain</option>
+              <option value="DZD">DZD dinar algérien</option>
+              <option value="TND">TND dinar tunisien</option>
+              <option value="XOF">XOF franc CFA (UEMOA)</option>
+              <option value="XAF">XAF franc CFA (CEMAC)</option>
+              <option value="SAR">SAR riyal saoudien</option>
+              <option value="AED">AED dirham des Émirats</option>
+              <option value="EGP">EGP livre égyptienne</option>
+              <option value="TRY">₺ livre turque</option>
+            </select>
+            <button type="button" class="btn small" id="auto-price">Utiliser le prix du jour</button>
+          </div>
+          <p class="hint" id="auto-status" aria-live="polite">Choisissez votre monnaie et saisissez tous les montants ci-dessous dans celle-ci.</p>
+          <div id="price-slot">
+            <div class="field" data-price="gold"><label for="goldPrice">Prix du gramme d’or</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0" class="need"><span data-cur></span></div></div>
+          </div>
+          <p class="nisab-line" id="nisab-inline"></p>
         </fieldset>
 
         <fieldset>
-          <legend>Or et argent</legend>
-          <p class="hint">Vérifiez le prix du gramme du jour auprès d’un bijoutier ou d’un site de cours de l’or. Il vous faut le prix du métal de votre nissab, même si vous n’en possédez pas.</p>
-          <div class="field"><label for="goldPrice">Prix du gramme d’or</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div></div>
-          <div class="field"><label for="silverPrice">Prix du gramme d’argent</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div></div>
-          <div class="field"><label for="goldGrams">Or que vous possédez</label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>g</span></div><small>Bijoux, pièces et lingots. Pour l’or 18 ou 21 carats, comptez le poids d’or pur.</small></div>
-          <div class="field"><label for="silverGrams">Argent que vous possédez</label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>g</span></div></div>
+          <legend><span class="step">2</span>Ce que vous avez</legend>
+          <div class="field"><label for="cash">Argent : espèces, cartes et comptes <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>Tout ensemble, épargne et dépôts compris. Seulement votre argent, sans les intérêts : on ne les garde pas, on les donne.</small></div>
+          <div class="field"><label for="goldGrams">Or, en grammes <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>g</span></div><small>Bijoux, pièces, lingots. Pour l’or 18 carats : poids × 0,75.</small></div>
+          <div class="field"><label for="silverGrams">Argent (métal), en grammes <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>g</span></div></div>
+          <div class="field" data-price="silver" hidden><label for="silverPrice">Prix du gramme d’argent</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0" class="need"><span data-cur></span></div></div>
+          <details class="more">
+            <summary>Plus : commerce, placements, argent qu’on vous doit</summary>
+            <div class="field"><label for="business">Marchandises à vendre <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>Si vous avez un commerce : le stock en magasin ou en entrepôt à sa valeur du jour. Les biens pour votre usage ne comptent pas.</small></div>
+            <div class="field"><label for="investments">Valeur de vos actions, fonds et cryptos <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>Pas le nombre, mais leur valeur totale en argent, comme l’affiche l’appli de votre courtier ou plateforme.</small></div>
+            <div class="field"><label for="receivables">Argent qu’on vous doit <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>Si vous avez prêté de l’argent et comptez le récupérer.</small></div>
+          </details>
         </fieldset>
 
         <fieldset>
-          <legend>Espèces et épargne</legend>
-          <div class="field"><label for="cash">Espèces et comptes courants</label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div></div>
-          <div class="field"><label for="savings">Épargne et dépôts</label><div class="inp"><input id="savings" name="savings" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div><small>Comptez seulement votre argent, pas les intérêts perçus. Les intérêts se donnent, ils ne se gardent pas.</small></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Placements et commerce</legend>
-          <div class="field"><label for="investments">Actions, fonds et crypto</label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div><small>Valeur de marché du jour.</small></div>
-          <div class="field"><label for="business">Stock et marchandises à vendre</label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div></div>
-          <div class="field"><label for="receivables">Argent qu’on vous doit</label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div><small>Prêts que vous comptez récupérer.</small></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Ce que vous devez maintenant</legend>
-          <div class="field"><label for="debts">Dettes et factures exigibles</label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur>EUR</span></div><small>Loyer, factures et échéances de prêt à payer maintenant. Pas le capital restant d’un prêt à long terme.</small></div>
+          <legend><span class="step">3</span>Dettes, crédits et paiements échelonnés</legend>
+          <div class="hint-row"><span class="hint">Une dette ordinaire : la somme entière à rembourser. Un crédit ou un paiement échelonné : seulement les 12 prochaines mensualités, y compris celle de ce mois si elle n’est pas encore payée ; s’il en reste moins, seulement celles-ci. Pas tout le capital restant. Par exemple, 500 par mois → 6 000.</span><button type="button" class="info" aria-expanded="false" aria-controls="debts-info" aria-label="Pourquoi 12 mois ?" title="Pourquoi 12 mois ?">?</button></div>
+          <p class="info-box" id="debts-info" hidden><strong>Pourquoi 12 mois.</strong> C’est l’avis de nombreux savants contemporains (Taqi Usmani, la norme AAOIFI) : un long crédit se rembourse peu à peu, et le déduire en entier rendrait la zakat presque jamais due. Classiquement, les écoles hanafite et hanbalite déduisent toute la dette, et l’école chaféite considère que la dette ne réduit pas la zakat. Si vous suivez l’un de ces avis, saisissez le montant selon celui-ci.</p>
+          <div class="field"><label for="debts">Combien déduire <span class="opt">(si vous en avez)</span></label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur></span></div></div>
         </fieldset>
         <p><button type="reset" class="reset">Tout effacer</button></p>
       </form>
 
       <aside class="calc-side">
         <div class="result" id="zakat-result" aria-live="polite">
-          <div class="lbl" id="zr-label">Zakat à verser</div>
+          <div class="lbl" id="zr-label">Votre zakat</div>
           <div class="big" id="zr-amount">—</div>
-          <p id="zr-note">Saisissez vos montants pour voir votre zakat.</p>
+          <p id="zr-note">Commencez par l’étape 1.</p>
           <dl>
-            <dt>Biens soumis à la zakat</dt><dd id="zr-wealth">—</dd>
+            <dt>Vos biens moins vos dettes</dt><dd id="zr-wealth">—</dd>
             <dt>Nissab</dt><dd id="zr-nisab">—</dd>
-            <dt>Taux</dt><dd>2,5 %</dd>
+            <dt>Zakat</dt><dd>2,5 %</dd>
           </dl>
           <p class="warn" id="zr-warn" hidden></p>
         </div>
@@ -178,7 +181,7 @@
       <h2 style="margin-top:0">Comment calculer la zakat</h2>
       <ol>
         <li><strong>Additionnez vos biens soumis à la zakat :</strong> espèces, comptes bancaires, épargne, or, argent, placements, marchandises et argent qu’on vous doit.</li>
-        <li><strong>Déduisez les dettes exigibles :</strong> factures, loyer et échéances de prêt à payer maintenant.</li>
+        <li><strong>Déduisez vos dettes :</strong> dettes et factures à rembourser, et pour les crédits et paiements échelonnés, les mensualités des 12 prochains mois.</li>
         <li><strong>Comparez au nissab :</strong> la valeur de 85 g d’or ou de 595 g d’argent.</li>
         <li><strong>Si vous êtes au nissab ou au-dessus depuis une année lunaire,</strong> versez 2,5 % du total.</li>
       </ol>
@@ -228,7 +231,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Yrys</span>
-    <span><a href="fr.html">L’app Yrys</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mailto:support@yrys.app">Contact</a> · <a href="zakat-calculator.html" lang="en">English</a> · <a href="ar-zakat.html" lang="ar">العربية</a></span>
+    <span><a href="fr.html">L’app Yrys</a> · <a href="privacy.html">Politique de confidentialité</a> · <a href="mailto:support@yrys.app">Contact</a> · <a href="zakat-calculator.html" lang="en">English</a> · <a href="ar-zakat.html" lang="ar">العربية</a> · <a href="kalkulyator-zakata.html" lang="ru">Русский</a></span>
   </div>
 </footer>
 <script src="zakat.js" defer></script>

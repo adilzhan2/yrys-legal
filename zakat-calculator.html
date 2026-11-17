@@ -11,6 +11,7 @@
 <link rel="alternate" hreflang="en" href="https://yrys.app/zakat-calculator.html">
 <link rel="alternate" hreflang="fr" href="https://yrys.app/calculateur-zakat.html">
 <link rel="alternate" hreflang="ar" href="https://yrys.app/ar-zakat.html">
+<link rel="alternate" hreflang="ru" href="https://yrys.app/kalkulyator-zakata.html">
 <link rel="alternate" hreflang="x-default" href="https://yrys.app/zakat-calculator.html">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Zakat Calculator — Gold &amp; Silver Nisab, 2.5%">
@@ -78,6 +79,7 @@
       <a class="opt" href="#how">How it works</a>
       <a class="lang" href="calculateur-zakat.html" lang="fr" hreflang="fr">Français</a>
       <a class="lang" href="ar-zakat.html" lang="ar" hreflang="ar">العربية</a>
+      <a class="lang" href="kalkulyator-zakata.html" lang="ru" hreflang="ru">Русский</a>
     </nav>
   </div>
 </header>
@@ -87,7 +89,8 @@
     <div class="wrap">
       <div class="crumbs"><a href="./">Yrys</a> › Zakat Calculator</div>
       <h1>Zakat Calculator</h1>
-      <p class="lead">Add what you own, subtract what you owe now, and see if you reach the nisab. Zakat is 2.5% of the total. Free, and nothing you type leaves your browser.</p>
+      <p class="lead">Three simple steps to find out whether you owe zakat, and how much. Skip any field that doesn’t apply to you.</p>
+      <div class="explain"><strong>Zakat</strong> is an obligatory charity: once a year a Muslim gives 2.5% of their savings to people in need. It is due only if your savings reach the <strong>nisab</strong>, the value of 85 g of gold or 595 g of silver.</div>
     </div>
   </section>
 
@@ -95,80 +98,75 @@
     <div class="wrap">
       <form id="zakat-form" autocomplete="off" novalidate>
         <fieldset>
-          <legend>Currency and nisab</legend>
-          <div class="field">
-            <label for="currency">Your currency</label>
-            <select id="currency" name="currency">
-              <option value="USD" selected>USD — US dollar</option>
-              <option value="GBP">GBP — British pound</option>
-              <option value="EUR">EUR — Euro</option>
-              <option value="CAD">CAD — Canadian dollar</option>
-              <option value="AUD">AUD — Australian dollar</option>
-              <option value="SAR">SAR — Saudi riyal</option>
-              <option value="AED">AED — UAE dirham</option>
-              <option value="QAR">QAR — Qatari riyal</option>
-              <option value="KWD">KWD — Kuwaiti dinar</option>
-              <option value="EGP">EGP — Egyptian pound</option>
-              <option value="MAD">MAD — Moroccan dirham</option>
-              <option value="DZD">DZD — Algerian dinar</option>
-              <option value="TND">TND — Tunisian dinar</option>
-              <option value="TRY">TRY — Turkish lira</option>
-              <option value="PKR">PKR — Pakistani rupee</option>
-              <option value="INR">INR — Indian rupee</option>
-              <option value="BDT">BDT — Bangladeshi taka</option>
-              <option value="IDR">IDR — Indonesian rupiah</option>
-              <option value="MYR">MYR — Malaysian ringgit</option>
-              <option value="NGN">NGN — Nigerian naira</option>
-              <option value="KZT">KZT — Kazakh tenge</option>
-              <option value="UZS">UZS — Uzbek som</option>
-              <option value="RUB">RUB — Russian ruble</option>
-            </select>
-          </div>
-          <p class="hint">Nisab is based on</p>
+          <legend><span class="step">1</span>Nisab: gold or silver</legend>
+          <p class="hint">The nisab is the minimum amount on which zakat is due. It is set by the price of gold or silver. Not sure which to pick? Leave gold.</p>
           <div class="seg" role="radiogroup" aria-label="Nisab is based on">
-            <label><input type="radio" name="basis" value="silver" checked><span>Silver · 595 g</span></label>
-            <label><input type="radio" name="basis" value="gold"><span>Gold · 85 g</span></label>
+            <label><input type="radio" name="basis" value="gold" checked><span>Gold · 85 g<small>Many contemporary scholars</small></span></label>
+            <label><input type="radio" name="basis" value="silver"><span>Silver · 595 g<small>Hanafi school</small></span></label>
           </div>
+          <p class="hint small">All four schools accept both thresholds for gold and silver themselves. The difference is how to count money: the Hanafi school takes the threshold that is better for the poor, silver; many contemporary scholars (Yusuf al-Qaradawi, the AAOIFI standard) use gold, because silver has lost much of its value.</p>
+          <div class="auto">
+            <select id="auto-cur" aria-label="Your currency">
+              <option value="USD" selected>$ US dollar</option>
+              <option value="GBP">£ British pound</option>
+              <option value="EUR">€ Euro</option>
+              <option value="CAD">C$ Canadian dollar</option>
+              <option value="AUD">A$ Australian dollar</option>
+              <option value="SAR">SAR Saudi riyal</option>
+              <option value="AED">AED UAE dirham</option>
+              <option value="QAR">QAR Qatari riyal</option>
+              <option value="KWD">KWD Kuwaiti dinar</option>
+              <option value="EGP">EGP Egyptian pound</option>
+              <option value="TRY">₺ Turkish lira</option>
+              <option value="PKR">PKR Pakistani rupee</option>
+              <option value="INR">₹ Indian rupee</option>
+              <option value="BDT">BDT Bangladeshi taka</option>
+              <option value="IDR">IDR Indonesian rupiah</option>
+              <option value="MYR">MYR Malaysian ringgit</option>
+              <option value="NGN">NGN Nigerian naira</option>
+              <option value="ZAR">ZAR South African rand</option>
+            </select>
+            <button type="button" class="btn small" id="auto-price">Use today’s price</button>
+          </div>
+          <p class="hint" id="auto-status" aria-live="polite">Pick your currency and enter all amounts below in it.</p>
+          <div id="price-slot">
+            <div class="field" data-price="gold"><label for="goldPrice">Gold price per gram</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0" class="need"><span data-cur></span></div></div>
+          </div>
+          <p class="nisab-line" id="nisab-inline"></p>
         </fieldset>
 
         <fieldset>
-          <legend>Gold &amp; silver</legend>
-          <p class="hint">Check today's price per gram with a local jeweller or a gold price site. You need the price of the metal your nisab is based on, even if you own none.</p>
-          <div class="field"><label for="goldPrice">Gold price per gram</label><div class="inp"><input id="goldPrice" name="goldPrice" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
-          <div class="field"><label for="silverPrice">Silver price per gram</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
-          <div class="field"><label for="goldGrams">Gold you own</label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>g</span></div><small>Jewellery, coins and bars. For 21k or 18k gold, count the pure gold weight.</small></div>
-          <div class="field"><label for="silverGrams">Silver you own</label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>g</span></div></div>
+          <legend><span class="step">2</span>What you have</legend>
+          <div class="field"><label for="cash">Money: cash, cards and bank accounts <span class="opt">(if any)</span></label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>All together, including savings and deposits. Only your own money, without interest: interest is not kept, it is given away.</small></div>
+          <div class="field"><label for="goldGrams">Gold, grams <span class="opt">(if any)</span></label><div class="inp"><input id="goldGrams" name="goldGrams" inputmode="decimal" placeholder="0"><span>g</span></div><small>Jewellery, coins, bars. For 22k gold: weight × 0.917; for 18k: × 0.75.</small></div>
+          <div class="field"><label for="silverGrams">Silver, grams <span class="opt">(if any)</span></label><div class="inp"><input id="silverGrams" name="silverGrams" inputmode="decimal" placeholder="0"><span>g</span></div></div>
+          <div class="field" data-price="silver" hidden><label for="silverPrice">Silver price per gram</label><div class="inp"><input id="silverPrice" name="silverPrice" inputmode="decimal" placeholder="0" class="need"><span data-cur></span></div></div>
+          <details class="more">
+            <summary>More: business, investments, money owed to you</summary>
+            <div class="field"><label for="business">Goods for sale <span class="opt">(if any)</span></label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>If you trade: stock in your shop or warehouse at today’s value. Things for your own use don’t count.</small></div>
+            <div class="field"><label for="investments">What your shares, funds and crypto are worth <span class="opt">(if any)</span></label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>Not how many you have, but their total value in money, as your broker or exchange app shows it.</small></div>
+            <div class="field"><label for="receivables">Money owed to you <span class="opt">(if any)</span></label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur></span></div><small>If you lent money and expect to get it back.</small></div>
+          </details>
         </fieldset>
 
         <fieldset>
-          <legend>Cash and savings</legend>
-          <div class="field"><label for="cash">Cash at home and in current accounts</label><div class="inp"><input id="cash" name="cash" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
-          <div class="field"><label for="savings">Savings and deposits</label><div class="inp"><input id="savings" name="savings" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Count only your own money, not interest earned. Interest is given away, not kept.</small></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Investments and business</legend>
-          <div class="field"><label for="investments">Shares, funds and crypto</label><div class="inp"><input id="investments" name="investments" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Today's market value of what you hold.</small></div>
-          <div class="field"><label for="business">Business stock and goods for sale</label><div class="inp"><input id="business" name="business" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div></div>
-          <div class="field"><label for="receivables">Money owed to you</label><div class="inp"><input id="receivables" name="receivables" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Loans you expect to get back.</small></div>
-        </fieldset>
-
-        <fieldset>
-          <legend>What you owe now</legend>
-          <div class="field"><label for="debts">Debts and bills due now</label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur>USD</span></div><small>Rent, bills and loan instalments due now. Not the full balance of a long-term loan.</small></div>
+          <legend><span class="step">3</span>Debts, loans and instalments</legend>
+          <div class="hint-row"><span class="hint">A regular debt: the full amount you have to repay. A loan or instalment plan: only the next 12 payments, including this month’s if you haven’t paid it yet; if fewer are left, just those. Not the whole balance. For example, 500 a month → 6,000.</span><button type="button" class="info" aria-expanded="false" aria-controls="debts-info" aria-label="Why 12 months?" title="Why 12 months?">?</button></div>
+          <p class="info-box" id="debts-info" hidden><strong>Why 12 months.</strong> This is the view of many contemporary scholars (Taqi Usmani, the AAOIFI standard): a long loan is repaid bit by bit, and subtracting all of it would mean zakat is almost never due. Classically, the Hanafi and Hanbali schools subtract the whole debt, and the Shafi’i school holds that debt doesn’t reduce zakat. If you follow one of these views, enter the amount by it.</p>
+          <div class="field"><label for="debts">How much to subtract <span class="opt">(if any)</span></label><div class="inp"><input id="debts" name="debts" inputmode="decimal" placeholder="0"><span data-cur></span></div></div>
         </fieldset>
         <p><button type="reset" class="reset">Clear all</button></p>
       </form>
 
       <aside class="calc-side">
         <div class="result" id="zakat-result" aria-live="polite">
-          <div class="lbl" id="zr-label">Zakat due</div>
+          <div class="lbl" id="zr-label">Your zakat</div>
           <div class="big" id="zr-amount">—</div>
-          <p id="zr-note">Enter your amounts to see your zakat.</p>
+          <p id="zr-note">Start with step 1.</p>
           <dl>
-            <dt>Zakatable wealth</dt><dd id="zr-wealth">—</dd>
+            <dt>Your wealth minus debts</dt><dd id="zr-wealth">—</dd>
             <dt>Nisab</dt><dd id="zr-nisab">—</dd>
-            <dt>Rate</dt><dd>2.5%</dd>
+            <dt>Zakat</dt><dd>2.5%</dd>
           </dl>
           <p class="warn" id="zr-warn" hidden></p>
         </div>
@@ -186,7 +184,7 @@
       <h2 style="margin-top:0">How zakat is calculated</h2>
       <ol>
         <li><strong>Add up your zakatable wealth:</strong> cash, bank balances, savings, gold, silver, investments, business goods and money owed to you.</li>
-        <li><strong>Subtract debts due now:</strong> bills, rent and loan instalments you have to pay now.</li>
+        <li><strong>Subtract your debts:</strong> debts and bills you have to repay, and for loans and instalment plans the payments for the next 12 months.</li>
         <li><strong>Compare with the nisab:</strong> the value of 85 g of gold or 595 g of silver.</li>
         <li><strong>If you are at or above the nisab for one lunar year,</strong> pay 2.5% of the total.</li>
       </ol>
@@ -236,7 +234,7 @@
 <footer>
   <div class="wrap">
     <span>© 2026 Yrys</span>
-    <span><a href="./">Yrys app</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@yrys.app">Contact</a> · <a href="calculateur-zakat.html" lang="fr">Français</a> · <a href="ar-zakat.html" lang="ar">العربية</a></span>
+    <span><a href="./">Yrys app</a> · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:support@yrys.app">Contact</a> · <a href="calculateur-zakat.html" lang="fr">Français</a> · <a href="ar-zakat.html" lang="ar">العربية</a> · <a href="kalkulyator-zakata.html" lang="ru">Русский</a></span>
   </div>
 </footer>
 <script src="zakat.js" defer></script>
