@@ -18,6 +18,7 @@
 | `ar.html` | Главная (арабский, RTL). Якорь `#support` — Support для ar-SA |
 | `fr.html` | Главная (французский). Якорь `#support` — Support для fr-FR. Кнопки App Store с `ct=site-fr` |
 | `zakat-calculator.html`, `calculateur-zakat.html`, `ar-zakat.html`, `kalkulyator-zakata.html` | Калькулятор закята (en/fr/ar/ru) для поиска: три шага, нисаб по золоту по умолчанию, кредиты — 12 ближайших платежей. Кнопка «Подставить сегодняшнюю цену» берёт цену с api.gold-api.com и курс с open.er-api.com (только по нажатию). Логика — `zakat.js`: ставка, нисаб и вычет долгов как в приложении (`ZakatCalculator.swift`), но в приложении пока нисаб по серебру и «долги на сейчас». Кнопки App Store с `ct=site-zakat-en/fr/ar/ru` |
+| Гайды (по 4 на en/fr/ar/ru): золото — `zakat-on-gold` / `zakat-sur-or` / `ar-zakat-gold` / `zakyat-s-zolota`; нисаб — `nisab-amount-2027` / `nissab-2027` / `ar-nisab-2027` / `nisab-2027`; закят и садака — `zakat-vs-sadaqah` / `zakat-et-sadaqa` / `ar-zakat-sadaqa` / `zakyat-i-sadaka`; бюджет — `halal-budget` / `budget-halal` / `ar-halal-budget` / `halyalnyy-byudzhet` (все `.html`) | К Рамадану 2027. Каждый ведёт на калькулятор своего языка; список гайдов — внизу каждого калькулятора (`#guides`); версии связаны через hreflang и кнопки языков. Кнопки App Store с `ct=site-guide-<gold/nisab/sadaka/budget>-<en/fr/ar/ru>`. **Таблицы нисаба (4 страницы нисаба) и цены в примерах (4 страницы о золоте) — по ценам на 18.11.2026: в конце января 2027 обновить цифры и даты** |
 | `privacy.html` | Privacy Policy — ссылка из App Store и из приложения. **Не переименовывать и не удалять** |
 | `site.css`, `img/` | Стили и картинки лендинга |
 | `CNAME` | Подключает домен `yrys.app` к GitHub Pages. **Не удалять** |
@@ -93,6 +94,7 @@ Yrys → Аналитика → Приобретение → Кампании (�
 | X (арабский) | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=x-ar&mt=8 |
 | WhatsApp-канал | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=whatsapp&mt=8 |
 | Reddit | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=reddit&mt=8 |
+| Гайды на сайте | `…&ct=site-guide-<gold/nisab/sadaka/budget>-<en/fr/ar/ru>` (16 меток) — уже стоят |
 
 Новую метку можно придумать самому (например `ct=ramadan-reel1`), регистрировать её нигде не нужно.
 

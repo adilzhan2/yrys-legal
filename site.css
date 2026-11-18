@@ -180,3 +180,23 @@ label .opt{color:var(--muted);font-weight:400;font-size:.9em}
 .inp input::placeholder{color:#4d5552;font-size:1.05rem}
 .inp input.need::placeholder{color:#4d5552;opacity:1}
 .inp span[data-cur]{min-width:1ch}
+/* guides (статьи-гайды) */
+.guide-hero{padding-bottom:0}
+.guide-hero .meta{color:var(--muted);font-size:.9rem;margin:0}
+.article h3{font-size:1.2rem;margin:1.8rem 0 .4rem}
+.article ol,.article ul{padding-inline-start:1.3rem}
+.article li{margin-bottom:.45rem}
+.formula{background:var(--card);border:1px solid var(--rule);border-radius:14px;padding:.9rem 1.1rem;color:var(--fg);font-variant-numeric:tabular-nums;margin:1rem 0}
+.go{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1rem;margin:2rem 0;background:linear-gradient(160deg,rgba(52,211,153,.14),rgba(52,211,153,.03));border:1px solid rgba(52,211,153,.35);border-radius:20px;padding:1.2rem 1.4rem}
+.go p{margin:0;color:var(--fg);font-weight:600;flex:1 1 16rem}
+.go .btn{font-size:.98rem;padding:.75rem 1.2rem}
+.article .promo{margin-top:2.5rem}
+.article .promo h2{margin-top:0}
+.guides{display:grid;gap:.8rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));margin:1rem 0 0;padding:0;list-style:none}
+.guides li{margin:0}
+.guides a{display:block;height:100%;background:var(--card);border:1px solid var(--rule);border-radius:16px;padding:1rem 1.1rem;color:var(--fg);text-decoration:none;font-weight:600}
+.guides a:hover{border-color:var(--accent)}
+.guides a span{display:block;color:var(--muted);font-weight:400;font-size:.9rem;margin-top:.2rem}
+.article ul.guides{padding:0}
+.article th,.article td{vertical-align:top}
+@media (max-width:420px){.top .wrap{gap:.6rem}nav{gap:.45rem;font-size:.85rem}nav .lang{padding:.15rem .5rem}}
