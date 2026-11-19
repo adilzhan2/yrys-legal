@@ -2,24 +2,35 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://yrys.app/</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://yrys.app/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://yrys.app/ar.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://yrys.app/fr.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yrys.app/ru.html"/>
   </url>
   <url>
     <loc>https://yrys.app/ar.html</loc>
-    <lastmod>2026-11-16</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://yrys.app/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://yrys.app/ar.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://yrys.app/fr.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yrys.app/ru.html"/>
   </url>
   <url>
     <loc>https://yrys.app/fr.html</loc>
-    <lastmod>2026-11-17</lastmod>
+    <lastmod>2026-11-19</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://yrys.app/"/>
     <xhtml:link rel="alternate" hreflang="ar" href="https://yrys.app/ar.html"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://yrys.app/fr.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yrys.app/ru.html"/>
+  </url>
+  <url>
+    <loc>https://yrys.app/ru.html</loc>
+    <lastmod>2026-11-19</lastmod>
+    <xhtml:link rel="alternate" hreflang="en" href="https://yrys.app/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://yrys.app/ar.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://yrys.app/fr.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://yrys.app/ru.html"/>
   </url>
   <url>
     <loc>https://yrys.app/privacy.html</loc>

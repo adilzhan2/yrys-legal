@@ -1,6 +1,6 @@
 # yrys.app — сайт Yrys
 
-Лендинг (en/ar/fr), поддержка и политика конфиденциальности приложения Yrys.
+Лендинг (en/ar/fr/ru), поддержка и политика конфиденциальности приложения Yrys.
 Живой адрес: https://yrys.app
 
 ## Как обновить сайт
@@ -17,6 +17,7 @@
 | `index.html` | Главная (английский). Якорь `#support` — ссылка Support из App Store |
 | `ar.html` | Главная (арабский, RTL). Якорь `#support` — Support для ar-SA |
 | `fr.html` | Главная (французский). Якорь `#support` — Support для fr-FR. Кнопки App Store с `ct=site-fr` |
+| `ru.html` | Главная (русский). Якорь `#support` — Support для ru. Кнопки App Store с `ct=site-ru`. Ссылка «Yrys» на русских гайдах и калькуляторе ведёт сюда |
 | `zakat-calculator.html`, `calculateur-zakat.html`, `ar-zakat.html`, `kalkulyator-zakata.html` | Калькулятор закята (en/fr/ar/ru) для поиска: три шага, нисаб по золоту по умолчанию, кредиты — 12 ближайших платежей. Кнопка «Подставить сегодняшнюю цену» берёт цену с api.gold-api.com и курс с open.er-api.com (только по нажатию). Логика — `zakat.js`: ставка, нисаб и вычет долгов как в приложении (`ZakatCalculator.swift`), но в приложении пока нисаб по серебру и «долги на сейчас». Кнопки App Store с `ct=site-zakat-en/fr/ar/ru` |
 | Гайды (по 4 на en/fr/ar/ru): золото — `zakat-on-gold` / `zakat-sur-or` / `ar-zakat-gold` / `zakyat-s-zolota`; нисаб — `nisab-amount-2027` / `nissab-2027` / `ar-nisab-2027` / `nisab-2027`; закят и садака — `zakat-vs-sadaqah` / `zakat-et-sadaqa` / `ar-zakat-sadaqa` / `zakyat-i-sadaka`; бюджет — `halal-budget` / `budget-halal` / `ar-halal-budget` / `halyalnyy-byudzhet` (все `.html`) | К Рамадану 2027. Каждый ведёт на калькулятор своего языка; список гайдов — внизу каждого калькулятора (`#guides`); версии связаны через hreflang и кнопки языков. Кнопки App Store с `ct=site-guide-<gold/nisab/sadaka/budget>-<en/fr/ar/ru>`. **Таблицы нисаба (4 страницы нисаба) и цены в примерах (4 страницы о золоте) — по ценам на 18.11.2026: в конце января 2027 обновить цифры и даты** |
 | `privacy.html` | Privacy Policy — ссылка из App Store и из приложения. **Не переименовывать и не удалять** |
@@ -87,6 +88,7 @@ Yrys → Аналитика → Приобретение → Кампании (�
 | Сайт, английская страница (все кнопки) | `…&ct=site-en&mt=8` — уже стоит |
 | Сайт, арабская страница (все кнопки) | `…&ct=site-ar&mt=8` — уже стоит |
 | Сайт, французская страница (все кнопки) | `…&ct=site-fr&mt=8` — уже стоит |
+| Сайт, русская страница (все кнопки) | `…&ct=site-ru&mt=8` — уже стоит |
 | Instagram, ссылка в профиле | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=instagram&mt=8 |
 | TikTok, ссылка в профиле | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=tiktok&mt=8 |
 | YouTube, описание канала и Shorts | https://apps.apple.com/app/apple-store/id6817070500?pt=129525827&ct=youtube&mt=8 |
