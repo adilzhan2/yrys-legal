@@ -1,0 +1,25 @@
+# Раз в сутки кладёт на сайт свежие курсы валют (формат open.er-api.com),
+# приложение Yrys берёт файл по кнопке «Загрузить из интернета».
+name: rates
+on:
+  schedule:
+    - cron: "20 1 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch rates
+        run: |
+          curl -fsS --retry 3 https://open.er-api.com/v6/latest/USD -o rates.new
+          python3 -c "import json;d=json.load(open('rates.new'));assert d['result']=='success' and 'KZT' in d['rates'];json.dump({'base_code':d['base_code'],'time_last_update_unix':d['time_last_update_unix'],'rates':d['rates']},open('rates.json','w'),separators=(',',':'))"
+          rm rates.new
+      - name: Commit
+        run: |
+          git config user.name "rates-bot"
+          git config user.email "rates-bot@users.noreply.github.com"
+          git add rates.json
+          git diff --cached --quiet || (git commit -m "Курсы валют $(date -u +%F)" && git push)
