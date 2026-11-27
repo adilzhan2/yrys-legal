@@ -55,7 +55,7 @@ footer a{color:inherit}
       <li><strong>Yrys works entirely on your iPhone.</strong> It has no account and no sign-in, and your spending never leaves the device.</li>
       <li><strong>We collect no personal data.</strong> There are no analytics, ads, cookies or tracking of any kind. The only thing we receive is your answer to a one-time feedback question, without anything that identifies you.</li>
       <li><strong>Your data leaves the device only when you choose</strong>: when you export a file, or as part of your own iOS backup.</li>
-      <li><strong>The app goes online for two things only</strong>: exchange rates when you tap “Load from the Internet”, and the one-time feedback question at the end of your first week. Nothing about your spending is sent.</li>
+      <li><strong>The app goes online for two things only</strong>: exchange rates when you tap “Load from the Internet” (and gold and silver prices when you tap “Use today’s price” in the zakat calculator), and the one-time feedback question at the end of your first week. Nothing about your spending is sent.</li>
     </ul>
   </div>
 
@@ -75,6 +75,7 @@ footer a{color:inherit}
 
   <h2 id="rates">Exchange rates</h2>
   <p>If you have accounts in more than one currency, Yrys converts them in analytics using rates you enter yourself or rates taken from your own transfers. Only when you tap “Load from the Internet” does the app download a public file of exchange rates, from yrys.app or, if that file is unavailable, from the free service open.er-api.com. The request carries no account, transaction or device identifiers; like any web request, the server that answers it sees your IP address and the time. Nothing else is sent, and the app requests nothing in the background.</p>
+  <p>The zakat calculator uses the same yrys.app file: when you tap “Use today’s price”, the app reads the day’s gold and silver price per gram from it. The same request, nothing more is sent.</p>
 
   <h2 id="feedback">Feedback</h2>
   <p>Once, when you finish the three first-week steps, Yrys asks whether you like the app. When that question closes, the app sends us your answer (yes, not really, or that you closed it), whether you tapped “Write a Review” and, only if you tap Send, the text you typed. With it go the app language, the platform, the app version and the day of your first week. Nothing that identifies you or your device is sent, and no accounts, transactions or amounts. The answer goes to our server at api.yrys.app, is stored in a database at Cloudflare and is forwarded to our team chat in Telegram so that we can read it. Like any web request, the server sees your IP address; it uses it only to limit abuse and does not store it. If you are offline, the answer waits on your device and is sent later. Please don't include personal details in the text. To have something you sent deleted, write to <a href="mailto:support@yrys.app">support@yrys.app</a>.</p>

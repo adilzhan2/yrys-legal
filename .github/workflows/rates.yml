@@ -17,6 +17,30 @@ jobs:
           curl -fsS --retry 3 https://open.er-api.com/v6/latest/USD -o rates.new
           python3 -c "import json;d=json.load(open('rates.new'));assert d['result']=='success' and 'KZT' in d['rates'];json.dump({'base_code':d['base_code'],'time_last_update_unix':d['time_last_update_unix'],'rates':d['rates']},open('rates.json','w'),separators=(',',':'))"
           rm rates.new
+      # Цена грамма золота и серебра в USD — для кнопки «Подставить сегодняшнюю цену»
+      # в закяте (источник тот же, что у калькулятора на сайте). Не ответил — оставляем
+      # вчерашние цены из прошлого rates.json, курсы валют обновляются всё равно.
+      - name: Fetch gold and silver
+        run: |
+          git show HEAD:rates.json > rates.old 2>/dev/null || echo '{}' > rates.old
+          python3 - <<'PY'
+          import json, time, urllib.request
+          OZ = 31.1034768
+          out = json.load(open('rates.json'))
+          try:
+              def usd_per_gram(sym):
+                  req = urllib.request.Request('https://api.gold-api.com/price/' + sym, headers={'User-Agent': 'rates-bot'})
+                  p = json.load(urllib.request.urlopen(req, timeout=20))['price']
+                  assert 1 < p < 100000
+                  return round(p / OZ, 4)
+              out['metals'] = {'unit': 'g', 'XAU': usd_per_gram('XAU'), 'XAG': usd_per_gram('XAG'), 'time_unix': int(time.time())}
+          except Exception as e:
+              print('metals: keep previous —', e)
+              old = json.load(open('rates.old')).get('metals')
+              if old: out['metals'] = old
+          json.dump(out, open('rates.json', 'w'), separators=(',', ':'))
+          PY
+          rm rates.old
       - name: Commit
         run: |
           git config user.name "rates-bot"
